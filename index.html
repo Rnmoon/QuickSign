@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Sign Signature App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .black {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        input,
+        select {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .canvas {
+            cursor: crosshair;
+            border: 1px solid #000;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .button-33 {
+            background-color: #c2fbd7;
+            border-radius: 100px;
+            box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset, rgba(44, 187, 99, .15) 0 1px 2px, rgba(44, 187, 99, .15) 0 2px 4px, rgba(44, 187, 99, .15) 0 4px 8px, rgba(44, 187, 99, .15) 0 8px 16px, rgba(44, 187, 99, .15) 0 16px 32px;
+            color: green;
+            cursor: pointer;
+            display: inline-block;
+            font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+            padding: 7px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 250ms;
+            border: 0;
+            font-size: 16px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-33:hover {
+            box-shadow: rgba(44, 187, 99, .35) 0 -25px 18px -14px inset, rgba(44, 187, 99, .25) 0 1px 2px, rgba(44, 187, 99, .25) 0 2px 4px, rgba(44, 187, 99, .25) 0 4px 8px, rgba(44, 187, 99, .25) 0 8px 16px, rgba(44, 187, 99, .25) 0 16px 32px;
+            transform: scale(1.05) rotate(-1deg);
+        }
+
+        #clearButton {
+            background-color: #ff4136;
+        }
+
+        #saveButton {
+            background-color: #2ecc40;
+        }
+
+        #retrieveButton {
+            background-color: #ffdc00;
+            color: #000;
+        }
+
+        #clearButton:hover {
+            background-color: #dc3545;
+        }
+
+        #saveButton:hover {
+            background-color: #28a745;
+        }
+
+        #retrieveButton:hover {
+            background-color: #ffc107;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .black,
+        input,
+        select {
+            width: 80%;
+            padding: 2px;
+        }
+    </style>
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="main">
+        <h1>Quick sign signature app</h1>
+        <div class="top">
+            <div class="black">
+                <label for="color-picker">Text color picker</label>
+                <input class="form-control" type="color" id="color-picker" value="#ff0000">
+            </div>
+            <div class="black">
+                <label for="canvasColor">Background</label>
+                <input class="form-control" type="color" id="canvasColor">
+            </div>
+            <div class="black">
+                <label for="fontSize">Font size</label>
+                <select id="fontSize">
+                    <option value="5">5px</option>
+                    <option value="10">10px</option>
+                    <option value="15">15px</option>
+                    <option value="20">20px</option>
+                    <option value="25">25px</option>
+                    <option value="30">30px</option>
+                </select>
+            </div>
+        </div>
+        <canvas class="canvas" id="myCanvas" width="800" height="420"></canvas>
+        <div class="bottom">
+            <button type="button" class="btn btn-danger button-33" id="clearButton">Clear</button>
+            <button type="button" class="btn btn-success button-33" id="saveButton">Save & Download</button>
+            <button type="button" class="btn btn-warning button-33" id="retrieveButton">Retrieve saved Signature</button>
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
